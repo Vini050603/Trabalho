@@ -1,0 +1,16 @@
+CREATE TABLE Marca(
+	id INTEGER NOT NULL,
+	sigla VARCHAR(5) NOT NULL,
+	descricao VARCHAR(50),
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Veiculo(
+	id INTEGER NOT NULL,
+	placa VARCHAR(8),
+	cor VARCHAR(20),
+	anoModelo INTEGER,
+	marca INTEGER,
+	PRIMARY KEY(id),
+	FOREIGN KEY (marca) REFERENCES Marca(id)
+);
